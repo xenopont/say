@@ -6,7 +6,7 @@ const verbsCount = verbs.length;
 
 const negativeProbability = 0.25;
 
-say: () => {
+const say = function() {
     if (nounsCount > 0 && verbsCount > 0) {
         const one = Math.floor(Math.random() * verbsCount);
         const two = Math.floor(Math.random() * nounsCount);
