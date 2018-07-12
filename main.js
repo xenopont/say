@@ -1,22 +1,11 @@
-const verbs = require('./dict/verbs');
-const nouns = require('./dict/nouns');
-
-const nounsCount = nouns.length;
-const verbsCount = verbs.length;
-
-const negativeProbability = 0.25;
+const schemas = require('./schemas');
+const countSchemas = schemas.length;
 
 const say = function() {
-    if (nounsCount > 0 && verbsCount > 0) {
-        const one = Math.floor(Math.random() * verbsCount);
-        const two = Math.floor(Math.random() * nounsCount);
-        const three = Math.floor(Math.random() * nounsCount);
-
-        return ((Math.random() < negativeProbability) ? 'не ' : '') + verbs[one] + ' ' + nouns[two] + ' ' + nouns[three];
+    if (countSchemas > 0) {
+        return schemas[Math.floor(Math.random() * countSchemas)]();
     }
-
     return '';
 }
 
-
-module.exports = say();
+module.exports = say(); // string result of the function
