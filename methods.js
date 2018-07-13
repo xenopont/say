@@ -13,7 +13,7 @@ const countPrefixes = prefixes.length;
 const countVerbs = verbs.length;
 
 const random = function (max) {
-    return Math.round(Math.random() * max);
+    return Math.floor(Math.random() * max);
 }
 
 module.exports = {
