@@ -11,6 +11,16 @@ const nounNounVerb = function () {
     );
 }
 
+const nounVerb = function () {
+    const interjection = m.getInterjection();
+
+    return m.appendEmoji(
+        m.getNoun() + ' ' +
+        m.appyNegation(m.getVerb()) +
+        (interjection === '' ? '' : ', ' + interjection)
+    );
+}
+
 const verbAdverb = function () {
     return m.appendEmoji(
         m.getVerb() + ' ' + m.getAdverb()
@@ -30,6 +40,7 @@ const verbNounNoun = function () {
 
 module.exports = [
     nounNounVerb,
+    nounVerb,
     verbAdverb,
     verbNounNoun,
 ];
