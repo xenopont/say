@@ -11,6 +11,12 @@ const nounNounVerb = function () {
     );
 }
 
+const verbAdverb = function () {
+    return m.appendEmoji(
+        m.getVerb() + ' ' + m.getAdverb()
+    );
+}
+
 const verbNounNoun = function () {
     const interjection = m.getInterjection();
 
@@ -24,5 +30,6 @@ const verbNounNoun = function () {
 
 module.exports = [
     nounNounVerb,
+    verbAdverb,
     verbNounNoun,
 ];

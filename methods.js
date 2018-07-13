@@ -1,3 +1,4 @@
+const adverbs = require('./dict/adverbs');
 const emoji = require('./dict/emoji');
 const interjections = require('./dict/interjections');
 const nouns = require('./dict/nouns');
@@ -5,16 +6,14 @@ const prefixes = require('./dict/prefixes');
 const verbs = require('./dict/verbs');
 
 const probabilities = require('./probabilities');
+const random = require('./tools').random;
 
+const countAdverbs = adverbs.length;
 const countEmoji = emoji.length;
 const countInterjections = interjections.length;
 const countNouns = nouns.length;
 const countPrefixes = prefixes.length;
 const countVerbs = verbs.length;
-
-const random = function (max) {
-    return Math.floor(Math.random() * max);
-}
 
 module.exports = {
     appyNegation: function (msg, probablity = probabilities.negation) {
@@ -36,6 +35,10 @@ module.exports = {
             return interjections[random(countInterjections)];
         }
         return '';
+    },
+
+    getAdverb: function () {
+        return adverbs[random(countAdverbs)];
     },
     
     getNoun: function () {
