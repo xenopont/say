@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // (telegram?) API will call this route
 app.post('/new-message', function(req, res) {
+    return res.end('ok');
+    /*
   const { message } = req.body
 
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
@@ -41,7 +43,7 @@ app.post('/new-message', function(req, res) {
       // ...and here if it was not
       console.log('Error :', err)
       res.end('Error :' + err)
-    })
+    })*/
 })
 
 // Finally, start our server
